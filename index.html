@@ -40,40 +40,110 @@
                     <canvas id="usageChart"></canvas>
                 </div>
             </div>
-            <div class="street-map">
-                <h2>Global Network</h2>
-                <div class="map-container">
-                    <!-- Area Labels -->
-                    <div class="area-label residential">Residential Area</div>
-                    <div class="area-label business">Business District</div>
-                    <div class="area-label remote">Remote Access</div>
-                    
-                    <!-- Main Streets -->
-                    <div class="street horizontal main" style="top: 50%;"></div>
-                    <div class="street vertical main" style="left: 50%;"></div>
-                    
-                    <!-- Secondary Streets -->
-                    <div class="street horizontal secondary" style="top: 25%;"></div>
-                    <div class="street horizontal secondary" style="top: 75%;"></div>
-                    <div class="street vertical secondary" style="left: 25%;"></div>
-                    <div class="street vertical secondary" style="left: 75%;"></div>
+            <div class="user-dashboard">
+                <h2>User Status Dashboard</h2>
+                <div class="user-grid">
+                    <!-- Home User -->
+                    <div class="user-card home">
+                        <div class="user-header">
+                            <h3>Home User</h3>
+                            <span class="status-indicator active"></span>
+                        </div>
+                        <div class="device-list">
+                            <div class="device">
+                                <span class="device-name">Desktop PC</span>
+                                <span class="device-status connected">Connected</span>
+                                <div class="backup-status">
+                                    <span class="backup-label">Last Backup:</span>
+                                    <span class="backup-time">2m ago</span>
+                                </div>
+                            </div>
+                            <div class="device">
+                                <span class="device-name">Laptop</span>
+                                <span class="device-status connected">Connected</span>
+                                <div class="backup-status">
+                                    <span class="backup-label">Last Backup:</span>
+                                    <span class="backup-time">5m ago</span>
+                                </div>
+                            </div>
+                            <div class="device">
+                                <span class="device-name">Tablet</span>
+                                <span class="device-status disconnected">Disconnected</span>
+                                <div class="backup-status">
+                                    <span class="backup-label">Last Backup:</span>
+                                    <span class="backup-time">1h ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                    <!-- Mainframe Center -->
-                    <div class="mainframe-dot"></div>
+                    <!-- Office User -->
+                    <div class="user-card office">
+                        <div class="user-header">
+                            <h3>Office User</h3>
+                            <span class="status-indicator active"></span>
+                        </div>
+                        <div class="device-list">
+                            <div class="device">
+                                <span class="device-name">Workstation</span>
+                                <span class="device-status connected">Connected</span>
+                                <div class="backup-status">
+                                    <span class="backup-label">Last Backup:</span>
+                                    <span class="backup-time">1m ago</span>
+                                </div>
+                            </div>
+                            <div class="device">
+                                <span class="device-name">Server</span>
+                                <span class="device-status connected">Connected</span>
+                                <div class="backup-status">
+                                    <span class="backup-label">Last Backup:</span>
+                                    <span class="backup-time">30s ago</span>
+                                </div>
+                            </div>
+                            <div class="device">
+                                <span class="device-name">Mobile</span>
+                                <span class="device-status connected">Connected</span>
+                                <div class="backup-status">
+                                    <span class="backup-label">Last Backup:</span>
+                                    <span class="backup-time">10m ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                    <!-- Home Users -->
-                    <div class="user-dot home" style="top: 30%; left: 30%;" data-tooltip="Home User 1 - Active"></div>
-                    <div class="user-dot home" style="top: 40%; left: 20%;" data-tooltip="Home User 2 - Active"></div>
-                    <div class="user-dot home" style="top: 20%; left: 40%;" data-tooltip="Home User 3 - Active"></div>
-
-                    <!-- Office Users -->
-                    <div class="user-dot office" style="top: 60%; left: 60%;" data-tooltip="Office User 1 - Active"></div>
-                    <div class="user-dot office" style="top: 70%; left: 70%;" data-tooltip="Office User 2 - Active"></div>
-                    <div class="user-dot office" style="top: 80%; left: 50%;" data-tooltip="Office User 3 - Active"></div>
-
-                    <!-- Remote Users -->
-                    <div class="user-dot remote" style="top: 20%; left: 80%;" data-tooltip="Remote User 1 - Active"></div>
-                    <div class="user-dot remote" style="top: 80%; left: 20%;" data-tooltip="Remote User 2 - Active"></div>
+                    <!-- Remote User -->
+                    <div class="user-card remote">
+                        <div class="user-header">
+                            <h3>Remote User</h3>
+                            <span class="status-indicator active"></span>
+                        </div>
+                        <div class="device-list">
+                            <div class="device">
+                                <span class="device-name">Laptop</span>
+                                <span class="device-status connected">Connected</span>
+                                <div class="backup-status">
+                                    <span class="backup-label">Last Backup:</span>
+                                    <span class="backup-time">15m ago</span>
+                                </div>
+                            </div>
+                            <div class="device">
+                                <span class="device-name">Phone</span>
+                                <span class="device-status connected">Connected</span>
+                                <div class="backup-status">
+                                    <span class="backup-label">Last Backup:</span>
+                                    <span class="backup-time">1h ago</span>
+                                </div>
+                            </div>
+                            <div class="device">
+                                <span class="device-name">Tablet</span>
+                                <span class="device-status disconnected">Disconnected</span>
+                                <div class="backup-status">
+                                    <span class="backup-label">Last Backup:</span>
+                                    <span class="backup-time">2h ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

@@ -178,6 +178,64 @@ document.addEventListener('DOMContentLoaded', () => {
             line.style.animation = `connectionPulse 2s ${randomDelay}s infinite`;
         });
     }, 2000);
+
+    // User Dashboard Updates
+    const userCards = document.querySelectorAll('.user-card');
+    const devices = document.querySelectorAll('.device');
+
+    // Simulate real-time status updates
+    setInterval(() => {
+        devices.forEach(device => {
+            const status = device.querySelector('.device-status');
+            const backupTime = device.querySelector('.backup-time');
+            
+            // Randomly change connection status (10% chance)
+            if (Math.random() < 0.1) {
+                const isConnected = status.classList.contains('connected');
+                status.classList.toggle('connected');
+                status.classList.toggle('disconnected');
+                status.textContent = isConnected ? 'Disconnected' : 'Connected';
+            }
+            
+            // Update backup time
+            const currentTime = new Date();
+            const lastBackup = new Date(currentTime - Math.random() * 3600000); // Random time within last hour
+            const minutesAgo = Math.floor((currentTime - lastBackup) / 60000);
+            backupTime.textContent = minutesAgo === 0 ? 'Just now' : `${minutesAgo}m ago`;
+        });
+    }, 5000);
+
+    // Add hover effects
+    userCards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            card.style.transform = 'translateY(-5px)';
+            card.style.boxShadow = '0 10px 20px rgba(0, 230, 118, 0.1)';
+        });
+
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'translateY(0)';
+            card.style.boxShadow = 'none';
+        });
+    });
+
+    // Add click effects for devices
+    devices.forEach(device => {
+        device.addEventListener('click', () => {
+            const status = device.querySelector('.device-status');
+            const isConnected = status.classList.contains('connected');
+            
+            // Toggle connection status
+            status.classList.toggle('connected');
+            status.classList.toggle('disconnected');
+            status.textContent = isConnected ? 'Disconnected' : 'Connected';
+            
+            // Update backup time to "Just now" when reconnected
+            if (!isConnected) {
+                const backupTime = device.querySelector('.backup-time');
+                backupTime.textContent = 'Just now';
+            }
+        });
+    });
 });
 
 function updateConnectionLine(line, start, end) {
